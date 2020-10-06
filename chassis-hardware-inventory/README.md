@@ -2,18 +2,18 @@
 Playbook collect chassis inventory facts using 'show version' and 'show chassis hardware', parsing them and store in .csv file. 
 
 
-/etc/ansible
+/etc/ansible/
 
-├── playbooks
+├── playbooks/
 
 
-│   ├── juniper
+│   ├── juniper/
 
 
 │   │   ├── get_chassis_inventory.yaml
 
 
-│   │   ├── templates
+│   │   ├── templates/
 
 
 │   │   │   ├── device-facts.j2
