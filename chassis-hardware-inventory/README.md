@@ -6,18 +6,15 @@ Playbook collect chassis inventory facts using 'show version' and 'show chassis 
 
 ├── playbooks/
 
-
 │   ├── juniper/
-
 
 │   │   ├── get_chassis_inventory.yaml
 
+│   │   ├── facts/
 
 │   │   ├── templates/
 
-
 │   │   │   ├── device-facts.j2
-
 
 │   │   │   ├── device-facts-columns.txt
 
