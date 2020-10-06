@@ -1,5 +1,5 @@
 
-Playbook collect chassis inventory facts using 'show version' and 'show chassis hardware', parsing them and store in .csv file. 
+Playbook collects chassis inventory facts from device(s) using 'show version' and 'show chassis hardware' commands , parses them using Jinja2 template and store to a temporary directory, then create a report with predefined header and save it to .csv file. 
 
 
 /etc/ansible/
