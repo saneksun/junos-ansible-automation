@@ -1,1 +1,17 @@
-
+{% set inv = [] %}
+{% set inv_check = [] %}
+{% for main in junos_facts.stdout_lines %}
+{% for line in main %}
+{% if "Hardware" in line or "Item" in line or "Chassis" in line or "BUILTIN" in line or "Routing" in line or "Model" in line or "JUNOS" in line or "fpc" in line or "Junos" in line or  "------" in line %}
+{% else %}{{ inv.append(line) }}{% endif %}
+{% endfor %}
+{% endfor %}
+{% for s in inv %}
+{% if s in inv_check and "Hostname:" in s %}
+{% elif "REV" in s %}
+{{ inv_check.append(s) }}
+{{ s | regex_replace('(REV\ \d{2})',' ') }}
+{% else %}
+{{ inv_check.append(s) }}
+{{ s | regex_replace('(?<=\s)\s{6}(?!(\w|\s{2,}))',' ') }}{% endif %}
+{% endfor %}
